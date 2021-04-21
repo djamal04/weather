@@ -11,6 +11,8 @@ Personal Google map API key has been used.
 ## Prerequisites
 node and npm installed.
 
+Google chrome is recommanded
+
 Optional Docker to build images and  deploy them.
 
 ## Launch the application
