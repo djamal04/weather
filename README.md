@@ -1,27 +1,37 @@
 # Weather
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+Application to display weather forecast.
 
-## Development server
+API call has been mocked with files `assets/cities.json` and `assets/forecast.json`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+'Display weather icon' has not been done.
 
-## Code scaffolding
+Personal Google map API key has been used.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Prerequisites
+node and npm installed.
 
-## Build
+Optional Docker to build images and  deploy them.
+
+## Launch the application
+
+First, clone the repo, do to the directory weather (containing package.json) and launch the command `npm install`
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+
+## Build on docker
+
+Run `docker build -t weather .` to build a new image based nginx with compiled HTML and JS files.
+
+## Run with docker
+
+Once build with docker finished, run `docker run -p 80:80 weather` Navigate to `http://localhost/`
+
+## Build without docker
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Build on docker-compose
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Replace Dockerfile file content by Dockerfile-compose and run ` docker-compose up -d --build` and `docker-compose run --service-ports weather-service`
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

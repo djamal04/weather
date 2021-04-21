@@ -1,0 +1,12 @@
+<div class="row pt-sm-5">
+  <div *ngIf="apiLoaded | async">
+    <google-map height="400px"
+                width="750px"
+                [center]="center"
+                [zoom]="zoom">
+      <map-marker *ngFor="let markerPosition of markerPositions"
+                  [position]="markerPosition.position"
+                  [options]="markerOptions" (mapClick)="forecast(markerPosition)"></map-marker>
+    </google-map>
+  </div>
+</div>

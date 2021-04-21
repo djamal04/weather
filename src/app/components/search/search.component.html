@@ -1,0 +1,16 @@
+<div class="row pt-sm-5">
+  <div class="col-sm-6">
+    <div class="input-group">
+      <input #searchInput (blur)="onFocusout()" (keyup.enter)="searchCities()" [(ngModel)]="cityInput"
+             [ngbTypeahead]="search" [inputFormatter]="formatter" [resultFormatter]="formatter"
+             (selectItem)="selectedCity($event)" class="form-control" spellcheck="false" type="text"
+             placeholder="Search for a city"/>
+      <div class="input-group-append">
+        <span class="input-group-text icon-search"></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <button (click)="searchCities()" class="btn btn-primary" type="button">Search</button>
+  </div>
+</div>
